@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "VM2xAu1CODq+YnjTQEJg0uT2oZqigQale6xf/VqSeXckAYZ3SvcrMvfLiNZweuY0RPKlNNg8DThtHEnWgoGEqQ==",
+  "dgSpecHash": "BYAEFP2BgRiSUL9QuDunjEyn1ekoYnjwoTB7UmAJmxk+2aGktySorbUbEJTpI0J74yTSDKh/CNBQYzKSBqy70w==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Lukas\\Desktop\\UzduotisNr3\\UzduotisNr3\\UzduotisNr3.csproj",
+  "projectFilePath": "E:\\GitRepositories\\TestavimasNr3\\UzduotisNr3\\UzduotisNr3.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Lukas\\.nuget\\packages\\microsoft.visualstudio.unittesting\\11.0.50727.1\\microsoft.visualstudio.unittesting.11.0.50727.1.nupkg.sha512",
     "C:\\Users\\Lukas\\.nuget\\packages\\newtonsoft.json\\12.0.3\\newtonsoft.json.12.0.3.nupkg.sha512",

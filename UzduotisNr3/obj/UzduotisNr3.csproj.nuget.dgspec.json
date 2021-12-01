@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Lukas\\Desktop\\UzduotisNr3\\UzduotisNr3\\UzduotisNr3.csproj": {}
+    "E:\\GitRepositories\\TestavimasNr3\\UzduotisNr3\\UzduotisNr3.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Lukas\\Desktop\\UzduotisNr3\\UzduotisNr3\\UzduotisNr3.csproj": {
+    "E:\\GitRepositories\\TestavimasNr3\\UzduotisNr3\\UzduotisNr3.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Lukas\\Desktop\\UzduotisNr3\\UzduotisNr3\\UzduotisNr3.csproj",
+        "projectUniqueName": "E:\\GitRepositories\\TestavimasNr3\\UzduotisNr3\\UzduotisNr3.csproj",
         "projectName": "UzduotisNr3",
-        "projectPath": "C:\\Users\\Lukas\\Desktop\\UzduotisNr3\\UzduotisNr3\\UzduotisNr3.csproj",
+        "projectPath": "E:\\GitRepositories\\TestavimasNr3\\UzduotisNr3\\UzduotisNr3.csproj",
         "packagesPath": "C:\\Users\\Lukas\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Lukas\\Desktop\\UzduotisNr3\\UzduotisNr3\\obj\\",
+        "outputPath": "E:\\GitRepositories\\TestavimasNr3\\UzduotisNr3\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
