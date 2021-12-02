@@ -4,8 +4,9 @@ using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Support.UI;
 using System.Threading;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-
-
+using OpenQA.Selenium.Interactions;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace UzduotisNr3
 {
@@ -49,9 +50,10 @@ namespace UzduotisNr3
             driver.Quit();
 
             Test2();
-            
+            Test3();
             Test4();
             Test5();
+
             //ctrl shift /
         }
 
@@ -77,6 +79,50 @@ namespace UzduotisNr3
         {
             IWebDriver driver = new ChromeDriver(@"C:\Users\Lukas\Desktop\ChromeDriver");
             driver.Manage().Window.Maximize();
+            driver.Navigate().GoToUrl("http://automationpractice.com/index.php");
+            Actions action = new Actions(driver);
+            Actions action1 = new Actions(driver);
+            IWebElement we = driver.FindElement(By.XPath("/html/body/div/div[2]/div/div[2]/div/div[1]/ul[1]/li[1]/div/div[2]/h5/a"));
+            driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(10);
+            action.MoveToElement(we).MoveToElement(driver.FindElement(By.XPath("/html/body/div/div[2]/div/div[2]/div/div[1]/ul[1]/li[1]/div/div[2]/div[2]/a[1]/span"))).Click().Build().Perform();
+            driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(5);
+            driver.FindElement(By.XPath("/html/body/div/div[1]/header/div[3]/div/div/div[4]/div[1]/div[2]/div[4]/span/span")).Click();
+            driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(5);
+            IWebElement wee = driver.FindElement(By.XPath("//*[@id=\"homefeatured\"]/li[5]/div/div[1]/div/a[1]/img"));
+            action1.MoveToElement(wee).MoveToElement(driver.FindElement(By.XPath("/html/body/div/div[2]/div/div[2]/div/div[1]/ul[1]/li[5]/div/div[2]/div[2]/a[1]/span"))).Click().Build().Perform();
+            driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(5);
+            driver.FindElement(By.XPath("/html/body/div/div[1]/header/div[3]/div/div/div[4]/div[1]/div[2]/div[4]/a/span")).Click();
+
+            string teisingas = "$47.49";
+            string test = driver.FindElement(By.XPath("/html/body/div/div[2]/div/div[3]/div/div[2]/table/tfoot/tr[7]/td[2]/span")).Text;
+            Assert.AreEqual(teisingas, test);
+            Console.WriteLine(test);
+            driver.Quit();
+
+            IWebDriver driver1 = new ChromeDriver(@"C:\Users\Lukas\Desktop\ChromeDriver");
+            driver1.Manage().Window.Maximize();
+            driver1.Navigate().GoToUrl("http://automationpractice.com/index.php?controller=my-account");
+            driver1.FindElement(By.Id("email")).SendKeys("antanasantanas123@gmail.com");
+            driver1.FindElement(By.Id("passwd")).SendKeys("antanas123");
+            driver1.FindElement(By.XPath("//button[@id='SubmitLogin']")).Click();
+            driver1.Navigate().GoToUrl("http://automationpractice.com/index.php");
+            driver1.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(5);
+            Actions action2 = new Actions(driver1);
+            Actions action3 = new Actions(driver1);
+            IWebElement we1 = driver1.FindElement(By.XPath("/html/body/div/div[2]/div/div[2]/div/div[1]/ul[1]/li[1]/div/div[2]/h5/a"));
+            driver1.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(10);
+            action2.MoveToElement(we1).MoveToElement(driver1.FindElement(By.XPath("/html/body/div/div[2]/div/div[2]/div/div[1]/ul[1]/li[1]/div/div[2]/div[2]/a[1]/span"))).Click().Build().Perform();
+            driver1.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(5);
+            driver1.FindElement(By.XPath("/html/body/div/div[1]/header/div[3]/div/div/div[4]/div[1]/div[2]/div[4]/span/span")).Click();
+            driver1.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(5);
+            IWebElement wee1 = driver1.FindElement(By.XPath("//*[@id=\"homefeatured\"]/li[5]/div/div[1]/div/a[1]/img"));
+            action3.MoveToElement(wee1).MoveToElement(driver1.FindElement(By.XPath("/html/body/div/div[2]/div/div[2]/div/div[1]/ul[1]/li[5]/div/div[2]/div[2]/a[1]/span"))).Click().Build().Perform();
+            driver1.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(5);
+            driver1.FindElement(By.XPath("/html/body/div/div[1]/header/div[3]/div/div/div[4]/div[1]/div[2]/div[4]/a/span")).Click();
+
+            Assert.AreEqual(teisingas, test);
+            Console.WriteLine(test);
+            driver1.Quit();
         }
 
         static void Test4()
