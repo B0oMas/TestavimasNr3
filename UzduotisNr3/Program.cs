@@ -53,7 +53,8 @@ namespace UzduotisNr3
             Test3();
             Test4();
             Test5();
-
+            Test6();
+            Test7();
             //ctrl shift /
         }
 
@@ -210,12 +211,50 @@ namespace UzduotisNr3
         {
             IWebDriver driver = new ChromeDriver(@"C:\Users\Lukas\Desktop\ChromeDriver");
             driver.Manage().Window.Maximize();
+            driver.Navigate().GoToUrl("http://automationpractice.com/index.php?controller=my-account");
+            driver.FindElement(By.Id("email")).SendKeys("antanasantanas123@gmail.com");
+            driver.FindElement(By.Id("passwd")).SendKeys("antanas123");
+            driver.FindElement(By.XPath("//button[@id='SubmitLogin']")).Click();
+            driver.Navigate().GoToUrl("http://automationpractice.com/index.php?fc=module&module=blockwishlist&controller=mywishlist");
+            driver.FindElement(By.Id("name")).SendKeys("testas");
+            driver.FindElement(By.XPath("/html/body/div/div[2]/div/div[3]/div[2]/div/form/fieldset/p/button/span")).Click();
+            driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(10);
+            driver.FindElement(By.XPath("/html/body/div/div[2]/div/div[3]/div[2]/div/div[1]/table/tbody/tr/td[6]/a")).Click();
+            IAlert al = driver.SwitchTo().Alert();
+            al.Accept();
+
+            string teisingas = "testas";
+            string test = driver.FindElement(By.XPath("/html/body/div/div[2]/div/div[3]/div[2]/div/div[1]/table/tbody/tr/td[1]/a")).Text;
+            Assert.AreEqual(teisingas, test);
+            driver.Quit();
         }
 
         static void Test7()
         {
             IWebDriver driver = new ChromeDriver(@"C:\Users\Lukas\Desktop\ChromeDriver");
             driver.Manage().Window.Maximize();
+            driver.Navigate().GoToUrl("http://automationpractice.com/index.php?controller=my-account");
+            driver.FindElement(By.Id("email")).SendKeys("antanasantanas123@gmail.com");
+            driver.FindElement(By.Id("passwd")).SendKeys("antanas123");
+            driver.FindElement(By.XPath("//button[@id='SubmitLogin']")).Click();
+            driver.Navigate().GoToUrl("http://automationpractice.com/index.php");
+            Actions action = new Actions(driver);
+            IWebElement we = driver.FindElement(By.XPath("/html/body/div/div[2]/div/div[2]/div/div[1]/ul[1]/li[1]/div/div[2]/h5/a"));
+            driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(10);
+            action.MoveToElement(we).MoveToElement(driver.FindElement(By.XPath("/html/body/div/div[2]/div/div[2]/div/div[1]/ul[1]/li[1]/div/div[2]/div[2]/a[1]/span"))).Click().Build().Perform();
+            driver.FindElement(By.XPath("/html/body/div/div[1]/header/div[3]/div/div/div[4]/div[1]/div[2]/div[4]/a/span")).Click();
+            driver.FindElement(By.XPath("/html/body/div/div[2]/div/div[3]/div/p[2]/a[1]/span")).Click();
+            driver.FindElement(By.XPath("/html/body/div/div[2]/div/div[3]/div/form/div/div[3]/textarea")).SendKeys("This is for testing purposes");
+            driver.FindElement(By.XPath("/html/body/div/div[2]/div/div[3]/div/form/p/button/span")).Click();
+            driver.FindElement(By.XPath("/html/body/div/div[2]/div/div[3]/div/div/form/div/p[2]/div/span/input")).Click();
+            driver.FindElement(By.XPath("/html/body/div/div[2]/div/div[3]/div/div/form/p/button/span")).Click();
+            driver.FindElement(By.XPath("/html/body/div/div[2]/div/div[3]/div/div/div[3]/div[1]/div/p/a")).Click();
+            driver.FindElement(By.XPath("/html/body/div/div[2]/div/div[3]/div/form/p/button/span")).Click();
+
+            string teisingas = "Your order on My Store is complete.";
+            string test = driver.FindElement(By.XPath("/html/body/div/div[2]/div/div[3]/div/div/p/strong")).Text;
+            Assert.AreEqual(teisingas, test);
+            driver.Quit();
         }
     }
 }
